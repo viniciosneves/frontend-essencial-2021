@@ -1,0 +1,36 @@
+body {
+   margin: 0;
+}
+
+#navbar {
+    background-color: #888;    
+}
+
+.navbar-lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;   
+}
+
+.navbar-item-lista {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.navbar-item-lista:hover {
+    background-color: #000;
+}
+
+.navbar .navbar-lista .navbar-item-lista:hover .navbar-link {
+    color: #fff;
+}
+
+.navbar .navbar-lista .navbar-item-lista .navbar-link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 28px;
+    line-height: 50px;
+    padding-left: 8px;
+    padding-right: 8px;;
+}
