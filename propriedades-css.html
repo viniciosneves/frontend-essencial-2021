@@ -6,6 +6,9 @@
 </head>
 <body>
   <style>
+    .container {
+      margin-top: 50px;
+    }
     .box {
       width: 250px;
       height: 250px;
@@ -14,7 +17,7 @@
       font-size: 40px;
       color: white;
       box-sizing: border-box;
-      display: inline-block;
+      /* display: inline-block; */
       cursor: not-allowed;
       /* border-radius: 500px; */
     }
@@ -30,12 +33,61 @@
       background: #032508;
       border: 5px solid #085008;
     }
+    .navbar {
+      background: aquamarine;
+      height: 50px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1;
+    }
+    body {
+      margin: 0;
+    }
+    .fundo-opaco {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #000;
+      z-index: 2;
+      opacity: 0.7;
+    }
+    .janela-modal {
+      width: 500px;
+      height: 500px;
+      background: #fff;
+      position: absolute;
+      z-index: 3;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 45px;
+    }
   </style>
+  <div class="fundo-opaco">
+  </div>
+  <div class="janela-modal">
+
+  </div>
+  <nav class="navbar">
+
+  </nav>
   <div class="container">
     <div class="box sucesso">
       ABCD
     </div>
     <div class="box erro">
+      ABCD
+    </div>
+    <div class="box informacao">
+      ABCD
+    </div>
+    <div class="box informacao">
+      ABCD
+    </div>
+    <div class="box informacao">
       ABCD
     </div>
     <div class="box informacao">

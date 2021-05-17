@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Seletores avançados</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <style>
+    /* universal */
+    * {
+      font-family: 'Roboto', 'Arial', sans-serif;
+    }
+    /* descendente */
+    ul li {
+      font-size: 32px;
+    }
+    /* por tag */
+    li {
+      color: #ad1919;
+    }
+    /* por id */
+    #lorem {
+      font-size: 20px;
+    }
+
+    /* pseudo elementos */
+    #lorem::before {
+      content: '-';
+    } 
+
+    /* por classe */
+    .imagem {
+      max-height: 150px;
+    }
+    /* adjacente */
+    div + h2 {
+      color: #120c70;
+    }
+    /* irmão */
+    h1 ~ h2 {
+      color: #ad1919;
+    }
+    /* filho direto / imediato */
+    .lista-ordenada > li {
+      color: #120c70;
+      font-size: 20px;
+    }
+    /* por atributo */
+    a[href*="http"] {
+      margin-top: 25px;
+      color: #ad1919;
+    }
+
+    /* pseudo classe */
+    tbody tr:nth-child(odd) {
+      background: #c2bbbbcb;
+    }
+    /* pseudo classe */
+    tbody tr:nth-child(even) {
+      background: #3c7186cb;
+    }
+    /* pseudo classe */
+    .lista-ordenada li:last-child {
+      font-size: 40px;
+    }
+  </style>
+  <div>
+    <h1>Seletores avançados</h1>
+    <h2>Primeiro H2</h2>
+    <h2>Segundo H2</h2>
+  </div>
+  <h2>Terceiro H2</h2>
+  <h2>Quarto H2</h2>
+  <p id="lorem">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam velit praesentium aliquid voluptatum! Fugit aperiam ipsam, cum blanditiis cumque beatae molestias error in repudiandae! Nesciunt error totam magni dignissimos iusto!
+  </p>
+  <ol class="lista-ordenada">
+    <li>Primogenito</li>
+    <li>Segundo</li>
+    <li>Terceiro</li>
+    <ol>
+      <li>Neto</li>
+      <ol>
+        <li>
+          Bisneto
+        </li>
+      </ol>
+    </ol>
+  </ol>
+  <ul>
+    <li>
+      seletor universal: *
+    </li>
+    <ul>
+      <li>Sub lista</li>
+    </ul>
+  </ul>
+  <img 
+    class="imagem"
+    src="imagens/logo-css3.jpeg" 
+    title="Logo do CSS3 xpto" 
+    alt="Logo do CSS3">
+  <p>Para baixar a fonte roboto <a href="https://fonts.google.com/specimen/Roboto" target="_blank">clique aqui</a></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Seletor</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          +
+        </td>
+        <td>
+          Seletor adjacente
+        </td>
+      </tr>
+      <tr>
+        <td>
+          ~
+        </td>
+        <td>
+          Seletor irmão
+        </td>
+      </tr>
+      <tr>
+        <td>
+          X > Y
+        </td>
+        <td>
+          Filhos diretos
+        </td>
+      </tr>
+      <tr>
+        <td>
+          a[atributo="valor buscado"]
+        </td>
+        <td>
+          seletor por atributo
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
