@@ -3,9 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>Propriedades CSS</title>
+  
 </head>
 <body>
   <style>
+
+/* 
+
+static
+    -> padrão, segue o fluxo do DOM
+
+relative
+    -> relativo a posição do próprio elemento
+
+absolute
+    -> relativo a posição do elemento pai
+      -> absoluto ou relativo senão, pega o body
+    -> sai do fluxo de renderização do DOM
+
+fixed
+    -> posição fixa relativa a tela
+
+sticky
+    -> mescla entre o relativo e o fixed
+      relativo até alcançar um limiar, depois tem 
+      comportamento de fixed
+*/
+
+
     .container {
       margin-top: 50px;
     }
