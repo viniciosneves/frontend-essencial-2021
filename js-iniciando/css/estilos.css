@@ -1,3 +1,7 @@
 .btn.block {
   width: 100%;
 }
+.fa-trash {
+  color: red;
+  cursor: pointer;
+}

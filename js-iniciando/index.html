@@ -5,6 +5,7 @@
   <title>Revisão</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <link rel="stylesheet" href="css/estilos.css">
+  <script src="https://kit.fontawesome.com/fdfc988212.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <style>
@@ -32,8 +33,9 @@
           Salvar
         </button>
         <button type="button" id="btnLimpar" class="btn btn-danger mt-3 block">
-          Remover todos os itens
+          Remover todos os itens <i class="fas fa-trash"></i>
         </button>
+        <!-- <i id="btnLimpar" class="fas fa-trash fa-3x"></i> -->
       </form>
     </div>
     <div class="col-12">
@@ -48,7 +50,7 @@
           </tr>
         </thead>
         <tbody>
-
+          <tr></tr>
         </tbody>
       </table>
     </div>
@@ -56,8 +58,50 @@
 </div>
 <script>
 
-  const btnLimpar = document.querySelector('#btnLimpar')
 
+  // váriavel global que representa o documento:
+  // console.log(document);
+
+  // documento nos permite encontrar elementos 
+  // dado um seletor
+  // console.log(document.querySelector);
+
+  // nós podemos "ouvir" alguns eventos do DOM
+  // por exemplo, o submit:
+  // document.querySelector('form').addEventListener('submit')
+
+  // passamos a funcão que será executada quando o evento acontecer
+  // usando arrow function
+  // document.querySelector('form').addEventListener('', evento => console.log(''))
+  // document.querySelector('form')
+  //   .addEventListener('submit', (evento) => {
+  //     console.log('form foi enviado')
+  //   })
+  // usando function
+  // document.querySelector('form')
+  //   .addEventListener('submit', function (evento) {
+  //     console.log('form foi enviado')
+  //     evento.preventDefault()
+  //   })
+
+  // criar elementos
+  // qualquer elemento HTML!!!!
+  // const td = document.createElement('td')
+
+  // inserir o texto do elemento
+  // td.textContent = 'texto dentro da TD'
+  
+  // aninhar elementos
+  // const tr = document.createElement('tr')
+  // tr.append(td)
+
+  // ouvir o evento de click
+  // btnLimpar.addEventListener('click', function () {
+  //   console.log('btn foi clicado');
+  // })
+
+  // remover elementos - todos os TRs dentro do TBODY
+  const btnLimpar = document.querySelector('#btnLimpar')
   btnLimpar.addEventListener('click', function () {
     const trs = document.querySelectorAll('tbody tr')
     trs.forEach((item) => { 
@@ -67,6 +111,8 @@
     //   item.remove()
     // })
   })
+
+
 
   const inputNome = document.querySelector('#nome');
   const inputQuantidade = document.querySelector('#quantidade');
