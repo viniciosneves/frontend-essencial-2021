@@ -18,7 +18,7 @@
       <form>
         <div class="form-group">
           <label>Nome do produto</label>
-          <input value="" required id="nome" class="form-control">
+          <input value="" required type="text" id="nome" class="form-control">
         </div>
         <div class="form-group">
           <label>Quantidade</label>
@@ -28,8 +28,11 @@
           <label>Valor</label>
           <input value="1" required min="1" type="number" id="valor" class="form-control">
         </div>
-        <button class="btn btn-primary mt-3 block">
+        <button type="submit" class="btn btn-primary mt-3 block">
           Salvar
+        </button>
+        <button type="button" id="btnLimpar" class="btn btn-danger mt-3 block">
+          Remover todos os itens
         </button>
       </form>
     </div>
@@ -52,6 +55,14 @@
   </div>
 </div>
 <script>
+
+  const btnLimpar = document.querySelector('#btnLimpar')
+
+  btnLimpar.addEventListener('click', function () {
+    const trs = document.querySelector('tr')
+    console.log(trs);
+  })
+
   const inputNome = document.querySelector('#nome');
   const inputQuantidade = document.querySelector('#quantidade');
   const inputValor = document.querySelector('#valor');
@@ -90,6 +101,9 @@
     const btnExcluir = document.createElement('button')
     btnExcluir.textContent = 'excluir'
     btnExcluir.classList.add('btn', 'btn-danger')
+    btnExcluir.addEventListener('click', function() {
+      tr.remove()
+    })
     tdExcluir.append(btnExcluir)
 
     tdNome.textContent = produto.nome
