@@ -11,6 +11,7 @@
 
   </style>
   <label>SubLista</label>
+  <!-- <input value="" id="nomeLista" type="text"> -->
   <select id="nomeLista">
     <option value="css">CSS</option>
     <option value="js">JS</option>
@@ -22,6 +23,16 @@
   <button id="addItem">Adicionar proximo item</button>
 
   <h1>Lista</h1>
+
+  <!--  Lista Não Ordenada -->
+  <ul>
+    <li></li>
+  </ul>
+
+  <!-- Lista Ordenada -->
+  <ol>
+    <li></li>
+  </ol>
 
   <ul>
     <li id="css">
@@ -42,6 +53,7 @@
     const subListaCss = document.querySelector('#css ul')
     const subListaJs = document.querySelector('#js ul')
     const subListaHtml = document.querySelector('#html ul')
+
     const input = document.querySelector('#nomeTarefa')
     const inputNomeLista = document.querySelector('#nomeLista')
     const button = document.querySelector('#addItem')
