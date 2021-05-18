@@ -5,3 +5,6 @@
   color: red;
   cursor: pointer;
 }
+.lista li {
+  font-weight: lighter;
+}

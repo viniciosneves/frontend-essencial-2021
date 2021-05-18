@@ -7,27 +7,73 @@
   <title>Document</title>
 </head>
 <body>
+  <style>
+
+  </style>
+  <label>SubLista</label>
+  <select id="nomeLista">
+    <option value="css">CSS</option>
+    <option value="js">JS</option>
+    <option value="html">HTML</option>
+  </select>
+  <label>Item</label>
+  <input value="" id="nomeTarefa" type="text">
+
+  <button id="addItem">Adicionar proximo item</button>
+
   <h1>Lista</h1>
+
   <ul>
-    <li>Estudar CSS</li>
-    <li>Estudar HTML</li>
-    <li>Estudar JS</li>
-    <li>Item novo</li>
+    <li id="css">
+      CSS
+      <ul></ul>
+    </li>
+    <li id="js">
+      JS
+      <ul></ul>
+    </li>
+    <li id="html">
+      HTML
+      <ul></ul>
+    </li>
   </ul>
 
-  <!-- <input value="" id="nomeTarefa" type="text"> -->
-
-  <!-- <button id="addItemm">Adicionar proximo item</button> -->
-
   <script>
+    const subListaCss = document.querySelector('#css ul')
+    const subListaJs = document.querySelector('#js ul')
+    const subListaHtml = document.querySelector('#html ul')
+    const input = document.querySelector('#nomeTarefa')
+    const inputNomeLista = document.querySelector('#nomeLista')
+    const button = document.querySelector('#addItem')
 
-    // const button = document.querySelector('#addItemm')
+    button.addEventListener('click', function() {
+ 
+      const li = document.createElement('li')
+      li.textContent = input.value
+      input.value = ''
+      if (inputNomeLista.value == 'css') {
+        subListaCss.append(li)        
+      }
+      if (inputNomeLista.value == 'js') {
+        subListaJs.append(li)       
+      }
+      if (inputNomeLista.value == 'html') {
+        subListaHtml.append(li)       
+      }
+    })
 
-    // const input = document.querySelector('#nomeTarefa')
-    // console.log(input);
-    
     // button.addEventListener('click', function() {
-    //   const ul = document.querySelector('ul')
+    //   if (!input.value) {
+    //     console.log('sem valor, sem item pra vc');
+    //     return
+    //   }      
+    //   let ul = document.querySelector('ul')
+    //   if (!ul) {
+    //     ul = document.createElement('ul')
+    //     let body = document.querySelector('body')
+    //     body.append(ul)
+    //     console.log('criei uma UL nova');
+    //   }
     //   const li = document.createElement('li')
     //   li.textContent = input.value
     //   input.value = ''
