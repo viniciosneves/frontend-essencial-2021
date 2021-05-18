@@ -18,15 +18,15 @@
       <form>
         <div class="form-group">
           <label>Nome do produto</label>
-          <input id="nome" class="form-control">
+          <input required id="nome" class="form-control">
         </div>
         <div class="form-group">
           <label>Quantidade</label>
-          <input id="quantidade" class="form-control">
+          <input required min="1" type="number" id="quantidade" class="form-control">
         </div>
         <div class="form-group">
           <label>Valor</label>
-          <input id="valor" class="form-control">
+          <input required min="1" type="number" id="valor" class="form-control">
         </div>
         <button class="btn btn-primary mt-3 block">
           Salvar
