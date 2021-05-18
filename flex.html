@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Flex</title>
+</head>
+
+<body>
+  <style>
+    .box {
+      width: 250px;
+      height: 250px;
+      padding: 15px;
+      margin: 15px;
+      font-size: 40px;
+      color: white;
+      box-sizing: border-box;
+      cursor: not-allowed;
+    }
+    .sucesso {
+      background: #156615;
+      border: 5px solid #042e04;
+    }
+    .container {
+      display: flex;
+    }
+    .centro {
+      justify-content: center;
+    }
+    .direita {
+      justify-content: flex-end;
+    }
+  </style>
+  <div class="container direita">
+    <div class="box sucesso">
+      ABCD
+    </div>
+    <div class="box sucesso">
+      ABCD
+    </div>
+  </div>
+  <div class="container direita">
+    <div class="box sucesso">
+      ABCD
+    </div>
+  </div>
+  <div class="container centro">
+    <div class="box sucesso">
+      ABCD
+    </div>
+    <div class="box sucesso">
+      ABCD
+    </div>
+    <div class="box sucesso">
+      ABCD
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Revisão</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<style>
+
+</style>
+
+<div class="container">
+  <h1>Itens de pedido</h1>
+  <div class="row">
+    <div class="col-6">
+      <form>
+        <div class="form-group">
+          <label>Nome do produto</label>
+          <input id="nome" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Quantidade</label>
+          <input id="quantidade" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Valor</label>
+          <input id="valor" class="form-control">
+        </div>
+        <button class="btn btn-primary mt-3 block">
+          Salvar
+        </button>
+      </form>
+    </div>
+    <div class="col-12">
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Quantidade</th>
+            <th>Valor</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Livro de CSS
+            </td>
+            <td>
+              1
+            </td>
+            <td>
+              39
+            </td>
+            <td>
+              39
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<style>
+  #nome {
+
+  }
+</style>
+<script>
+  const inputNome = document.querySelector('#nome');
+  const inputQuantidade = document.querySelector('#quantidade');
+  const inputValor = document.querySelector('#valor');
+
+  const form = document.querySelector('form');
+
+  form.addEventListener('submit', function(evento) {
+    evento.preventDefault()
+
+  })
+
+</script>
+</body>
+</html>
