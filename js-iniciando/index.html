@@ -59,8 +59,13 @@
   const btnLimpar = document.querySelector('#btnLimpar')
 
   btnLimpar.addEventListener('click', function () {
-    const trs = document.querySelector('tr')
-    console.log(trs);
+    const trs = document.querySelectorAll('tbody tr')
+    trs.forEach((item) => { 
+      item.remove() 
+    })
+    // trs.forEach(function (item) {
+    //   item.remove()
+    // })
   })
 
   const inputNome = document.querySelector('#nome');
