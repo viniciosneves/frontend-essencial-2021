@@ -86,15 +86,22 @@
     const tdValor = document.createElement('td')
     const tdTotal = document.createElement('td')
 
+    const tdExcluir = document.createElement('td')
+    const btnExcluir = document.createElement('button')
+    btnExcluir.textContent = 'excluir'
+    btnExcluir.classList.add('btn', 'btn-danger')
+    tdExcluir.append(btnExcluir)
+
     tdNome.textContent = produto.nome
     tdQuantidade.textContent = produto.quantidade
     tdValor.textContent = produto.valor
     tdTotal.textContent = produto.total
-
+    
     tr.append(tdNome)
     tr.append(tdQuantidade)
     tr.append(tdValor)
     tr.append(tdTotal)
+    tr.append(tdExcluir)
 
     tbody.append(tr)
 
