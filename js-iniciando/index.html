@@ -63,11 +63,6 @@
     </div>
   </div>
 </div>
-<style>
-  #nome {
-
-  }
-</style>
 <script>
   const inputNome = document.querySelector('#nome');
   const inputQuantidade = document.querySelector('#quantidade');
@@ -77,7 +72,11 @@
 
   form.addEventListener('submit', function(evento) {
     evento.preventDefault()
-
+    let produto = {}
+    produto.nome = inputNome.value
+    produto.quantidade = inputQuantidade.value
+    produto.valor = inputValor.value
+    console.log(produto);
   })
 
 </script>
