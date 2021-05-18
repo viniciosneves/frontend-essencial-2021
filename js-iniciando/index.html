@@ -18,15 +18,15 @@
       <form>
         <div class="form-group">
           <label>Nome do produto</label>
-          <input required id="nome" class="form-control">
+          <input value="Nome do produto" required id="nome" class="form-control">
         </div>
         <div class="form-group">
           <label>Quantidade</label>
-          <input required min="1" type="number" id="quantidade" class="form-control">
+          <input value="1" required min="1" type="number" id="quantidade" class="form-control">
         </div>
         <div class="form-group">
           <label>Valor</label>
-          <input required min="1" type="number" id="valor" class="form-control">
+          <input value="1" required min="1" type="number" id="valor" class="form-control">
         </div>
         <button class="btn btn-primary mt-3 block">
           Salvar
@@ -69,6 +69,7 @@
   const inputValor = document.querySelector('#valor');
 
   const form = document.querySelector('form');
+  const tbody = document.querySelector('tbody');
 
   const botao = document.querySelector('.btn');
 
@@ -79,36 +80,35 @@
   //   console.log('Quandidade de cliques', quantidadeDeCliques);
   // })
 
-
-
   form.addEventListener('submit', function(evento) {
     evento.preventDefault()
-    console.log('salvando produto');
-  //   let produto = {}
-  //   produto.nome = inputNome.value
-  //   produto.quantidade = inputQuantidade.value
-  //   produto.valor = inputValor.value
-
-  //   produto.total = produto.quantidade * produto.valor
-
-  //   const tr = document.createElement('tr')
     
-  //   const tdNome = document.createElement('td')
-  //   const tdQuantidade = document.createElement('td')
-  //   const tdValor = document.createElement('td')
-  //   const tdTotal = document.createElement('td')
+    let produto = {}
+    produto.nome = inputNome.value
+    produto.quantidade = inputQuantidade.value
+    produto.valor = inputValor.value
 
-  //   tdNome.textContent = produto.nome
-  //   tdQuantidade.textContent = produto.quantidade
-  //   tdValor.textContent = produto.valor
-  //   tdTotal.textContent = produto.total
+    produto.total = produto.quantidade * produto.valor
 
-  //   tr.append(tdNome)
-  //   tr.append(tdQuantidade)
-  //   tr.append(tdValor)
-  //   tr.append(tdTotal)
+    // console.log(produto);
+    const tr = document.createElement('tr')
+    
+    const tdNome = document.createElement('td')
+    const tdQuantidade = document.createElement('td')
+    const tdValor = document.createElement('td')
+    const tdTotal = document.createElement('td')
 
-  //   console.log(tr)
+    tdNome.textContent = produto.nome
+    tdQuantidade.textContent = produto.quantidade
+    tdValor.textContent = produto.valor
+    tdTotal.textContent = produto.total
+
+    tr.append(tdNome)
+    tr.append(tdQuantidade)
+    tr.append(tdValor)
+    tr.append(tdTotal)
+
+    tbody.append(tr)
   })
 
 </script>
