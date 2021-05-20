@@ -14,8 +14,11 @@
 
 <div class="container">
   <h1>Itens de pedido</h1>
+
+
+  <!-- resolvemos utilizar o grid do bootstrap -->
   <div class="row">
-    <div class="col-6">
+    <div class="col-md-6">
       <form>
         <div class="form-group">
           <label>Nome do produto</label>
@@ -29,20 +32,28 @@
           <label>Valor</label>
           <input value="1" required min="1" type="number" id="valor" class="form-control">
         </div>
+        <div>
+          <label>Categoria</label>
+          <select id="categoria" class="form-control">
+            <option>Livros</option>
+            <option>DVDs</option>
+            <option>Papelaria</option>
+          </select>
+        </div>
         <button type="submit" class="btn btn-primary mt-3 block">
           Salvar
         </button>
         <button type="button" id="btnLimpar" class="btn btn-danger mt-3 block">
           Remover todos os itens <i class="fas fa-trash"></i>
         </button>
-        <!-- <i id="btnLimpar" class="fas fa-trash fa-3x"></i> -->
       </form>
     </div>
-    <div class="col-12">
-      <table class="table mt-4">
+    <div class="col-md-6">
+      <table class="table table-striped mt-4">
         <thead>
           <tr>
             <th>Nome</th>
+            <th>Categoria</th>
             <th>Quantidade</th>
             <th>Valor</th>
             <th>Total</th>
@@ -117,6 +128,7 @@
   const inputNome = document.querySelector('#nome');
   const inputQuantidade = document.querySelector('#quantidade');
   const inputValor = document.querySelector('#valor');
+  const inputCategoria = document.querySelector('#categoria');
 
   const form = document.querySelector('form');
   const tbody = document.querySelector('tbody');
@@ -137,13 +149,14 @@
     produto.nome = inputNome.value
     produto.quantidade = inputQuantidade.value
     produto.valor = inputValor.value
-
+    produto.categoria = inputCategoria.value
     produto.total = produto.quantidade * produto.valor
 
-    // console.log(produto);
+    // criando o elemento TR (a linha da tabela)
     const tr = document.createElement('tr')
     
     const tdNome = document.createElement('td')
+    const tdCategoria = document.createElement('td')
     const tdQuantidade = document.createElement('td')
     const tdValor = document.createElement('td')
     const tdTotal = document.createElement('td')
@@ -151,18 +164,20 @@
     const tdExcluir = document.createElement('td')
     const btnExcluir = document.createElement('button')
     btnExcluir.textContent = 'excluir'
-    btnExcluir.classList.add('btn', 'btn-danger')
+    btnExcluir.classList.add('btn', 'btn-danger', 'btn-sm')
     btnExcluir.addEventListener('click', function() {
       tr.remove()
     })
     tdExcluir.append(btnExcluir)
 
     tdNome.textContent = produto.nome
+    tdCategoria.textContent = produto.categoria
     tdQuantidade.textContent = produto.quantidade
     tdValor.textContent = produto.valor
     tdTotal.textContent = produto.total
     
     tr.append(tdNome)
+    tr.append(tdCategoria)
     tr.append(tdQuantidade)
     tr.append(tdValor)
     tr.append(tdTotal)

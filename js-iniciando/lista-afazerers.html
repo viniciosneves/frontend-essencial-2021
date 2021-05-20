@@ -5,54 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
   <style>
 
   </style>
-  <label>SubLista</label>
-  <!-- <input value="" id="nomeLista" type="text"> -->
-  <select id="nomeLista">
-    <option value="css">CSS</option>
-    <option value="js">JS</option>
-    <option value="html">HTML</option>
-  </select>
-  <label>Item</label>
-  <input value="" id="nomeTarefa" type="text">
+  <input placeholder="Próxima tarefa" value="" id="nomeTarefa" type="text">
 
   <button id="addItem">Adicionar proximo item</button>
 
   <h1>Lista</h1>
-
-  <!--  Lista Não Ordenada -->
   <ul>
-    <li></li>
-  </ul>
-
-  <!-- Lista Ordenada -->
-  <ol>
-    <li></li>
-  </ol>
-
-  <ul>
-    <li id="css">
-      CSS
-      <ul></ul>
-    </li>
-    <li id="js">
-      JS
-      <ul></ul>
-    </li>
-    <li id="html">
-      HTML
-      <ul></ul>
-    </li>
+    <li>CSS <button>x</button></li>
   </ul>
 
   <script>
-    const subListaCss = document.querySelector('#css ul')
-    const subListaJs = document.querySelector('#js ul')
-    const subListaHtml = document.querySelector('#html ul')
 
     const input = document.querySelector('#nomeTarefa')
     const inputNomeLista = document.querySelector('#nomeLista')
@@ -61,37 +30,16 @@
     button.addEventListener('click', function() {
  
       const li = document.createElement('li')
+      const button = document.createElement('button')
+      button.textContent = 'x'
+      // button.addEventListener... <- lógica pra excluir o item
       li.textContent = input.value
+      li.append(button)
       input.value = ''
-      if (inputNomeLista.value == 'css') {
-        subListaCss.append(li)        
-      }
-      if (inputNomeLista.value == 'js') {
-        subListaJs.append(li)       
-      }
-      if (inputNomeLista.value == 'html') {
-        subListaHtml.append(li)       
-      }
+
+      ul.append(li)
+
     })
-
-    // button.addEventListener('click', function() {
-    //   if (!input.value) {
-    //     console.log('sem valor, sem item pra vc');
-    //     return
-    //   }      
-    //   let ul = document.querySelector('ul')
-    //   if (!ul) {
-    //     ul = document.createElement('ul')
-    //     let body = document.querySelector('body')
-    //     body.append(ul)
-    //     console.log('criei uma UL nova');
-    //   }
-    //   const li = document.createElement('li')
-    //   li.textContent = input.value
-    //   input.value = ''
-    //   ul.append(li)
-    // })
-
   </script>
 
 </body>
