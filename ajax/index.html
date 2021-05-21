@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div>
+    <h1>Busque um endereço pelo CEP!</h1>
+
+    <label>CEP:</label>
+    <input type="number" id="cep">
+    <button>buscar</button>
+
+  </div>
+  
+  <script>
+    const inputCep = document.querySelector('#cep')
+    const button = document.querySelector('button')
+    console.log(inputCep, button);
+    button.addEventListener('click', () => {
+      console.log('usuário clicou');
+      const url = 'https://viacep.com.br/ws/' + inputCep.value + '/json/'
+      fetch(url) // ATENCAO: o fetch é assincrono! o JS não vai ficar aqui esperando esse código executar
+        // camarada que vai buscar os dados da url passada
+        // me promete que vai tentar, mas não garante que vai conseguir
+        .then(
+          // se vc cumprir a sua promessa
+          // por favor, transforme a sua resposta em JSON
+          (resposta) => {
+            console.log('consegui obter a resposta do viacep')
+            return resposta.json()
+          }
+        )
+        .then((endereco) => {
+          // se voce conseguiu transformar em json
+          // faz esse console log maroto aqui pra mim
+          console.log('consegui obter o endereço')
+          console.log(endereco.logradouro);
+        })
+        .catch((erro) => {
+          // tudo bem se der errado.
+          // se deu errado, vc executa esse código aqui pra mim
+          alert('Impossível obter este endereço!')
+          console.log('ops, algo deu errado', erro);
+        })
+      console.log('fim do método que estava escutando o evento de click')
+    })
+
+  </script>
+
+</body>
+</html>
